@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name         Enhanced Google Drive PDF Downloader
 // @namespace    GoogleDrivePDFDownloader
-// @version      2
+// @version      2.1
 // @description  Download protected PDF files from Google Drive with quality options
 // @author       akvabhi
-// @match        https://drive.google.com/*
-// @grant        none
+// @match        https://drive.google.com/file/*
+// @inject-into  content
+// @grant        unsafeWindow
+// @require      https://unpkg.com/jspdf@2.5.2/dist/jspdf.umd.min.js
 // @homepage     https://github.com/Akv2021/Enhanced-Google-Drive-PDF-Downloader
 // @updateURL    https://raw.githubusercontent.com/Akv2021/Enhanced-Google-Drive-PDF-Downloader/refs/heads/main/script.user.js
 // @downloadURL  https://raw.githubusercontent.com/Akv2021/Enhanced-Google-Drive-PDF-Downloader/refs/heads/main/script.user.js
@@ -91,34 +93,6 @@
             this.show(`Processing: ${percentage}% (${current}/${total} pages)`);
         }
     };
-    async function loadJsPDF() {
-        return new Promise((resolve, reject) => {
-            log('Loading jsPDF library...');
-            progressIndicator.show('Loading PDF library...');
-
-            const script = document.createElement('script');
-            const scriptURL = 'https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js';
-
-            if (window.trustedTypes && trustedTypes.createPolicy) {
-                const policy = trustedTypes.createPolicy('pdfDownloaderPolicy', {
-                    createScriptURL: (input) => input
-                });
-                script.src = policy.createScriptURL(scriptURL);
-            } else {
-                script.src = scriptURL;
-            }
-
-            script.onload = () => {
-                log('jsPDF library loaded successfully');
-                resolve();
-            };
-            script.onerror = (error) => {
-                log('Failed to load jsPDF library', 'error');
-                reject(error);
-            };
-            document.body.appendChild(script);
-        });
-    }
 
     async function convertImageToBase64(img) {
         try {
@@ -186,8 +160,6 @@
 
             log('Starting PDF download process...');
             progressIndicator.show('Initializing...');
-
-            await loadJsPDF();
 
             const validPages = getValidPdfPages();
             if (validPages.length === 0) {
