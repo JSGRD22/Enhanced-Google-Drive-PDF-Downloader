@@ -89,6 +89,7 @@ Contributions are welcome! Please feel free to submit a [Pull Request](https://g
 
 ## 🙏 Credits
 - Uses [jsPDF](https://github.com/MrRio/jsPDF) library
+- Forked from [Akv2021's original userscript](https://github.com/Akv2021/Enhanced-Google-Drive-PDF-Downloader) with additional fixes
 
 ---
 
