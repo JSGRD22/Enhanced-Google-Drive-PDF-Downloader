@@ -436,7 +436,7 @@
         authorText.style.marginRight = '8px';
 
         const githubLink = document.createElement('a');
-        githubLink.href = 'https://github.com/Akv2021/Enhanced-Google-Drive-PDF-Downloader/issues';
+        githubLink.href = 'https://github.com/JSGRD22/Enhanced-Google-Drive-PDF-Downloader/issues';
         githubLink.target = '_blank';
         githubLink.style.cssText = `
             color: white;
