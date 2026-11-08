@@ -9,8 +9,8 @@
 // @grant        unsafeWindow
 // @require      https://unpkg.com/jspdf@2.5.2/dist/jspdf.umd.min.js
 // @homepage     https://github.com/Akv2021/Enhanced-Google-Drive-PDF-Downloader
-// @updateURL    https://raw.githubusercontent.com/Akv2021/Enhanced-Google-Drive-PDF-Downloader/refs/heads/main/script.user.js
-// @downloadURL  https://raw.githubusercontent.com/Akv2021/Enhanced-Google-Drive-PDF-Downloader/refs/heads/main/script.user.js
+// @updateURL    https://raw.githubusercontent.com/JSGRD22/Enhanced-Google-Drive-PDF-Downloader/refs/heads/main/script.user.js
+// @downloadURL  https://raw.githubusercontent.com/JSGRD22/Enhanced-Google-Drive-PDF-Downloader/refs/heads/main/script.user.js
 // @license      MIT
 // ==/UserScript==
 
