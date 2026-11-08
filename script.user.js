@@ -1,14 +1,14 @@
 // ==UserScript==
-// @name         Enhanced Google Drive PDF Downloader
+// @name         (Updated) Enhanced Google Drive PDF Downloader
 // @namespace    GoogleDrivePDFDownloader
 // @version      2.1
 // @description  Download protected PDF files from Google Drive with quality options
-// @author       akvabhi
+// @author       JSGRD22、akvabhi
 // @match        https://drive.google.com/file/*
 // @inject-into  content
 // @grant        unsafeWindow
 // @require      https://unpkg.com/jspdf@2.5.2/dist/jspdf.umd.min.js
-// @homepage     https://github.com/Akv2021/Enhanced-Google-Drive-PDF-Downloader
+// @homepage     https://github.com/JSGRD22/Enhanced-Google-Drive-PDF-Downloader
 // @updateURL    https://raw.githubusercontent.com/JSGRD22/Enhanced-Google-Drive-PDF-Downloader/refs/heads/main/script.user.js
 // @downloadURL  https://raw.githubusercontent.com/JSGRD22/Enhanced-Google-Drive-PDF-Downloader/refs/heads/main/script.user.js
 // @license      MIT
