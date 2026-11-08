@@ -25,14 +25,10 @@ A powerful userscript that enables downloading view-only PDFs from Google Drive 
 
 ## 📝 Installation Steps
 
-1. Install a userscript manager:
-   - For Firefox: [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
-   - For Chrome: ❌ Gives Trusted Types policy errors
-
+1. Install a userscript manager for Firefox: [Violentmonkey](https://addons.mozilla.org/zh-CN/firefox/addon/violentmonkey)
 2. Install the script:
-   - Click [here](https://raw.githubusercontent.com/Akv2021/Enhanced-Google-Drive-PDF-Downloader/refs/heads/main/script.user.js) to install (add your script installation link)
+   - Click [here](https://raw.githubusercontent.com/JSGRD22/Enhanced-Google-Drive-PDF-Downloader/refs/heads/main/script.user.js) to install
    - Or copy the script content and create a new userscript in your manager
-   - [Greasy Fork Link](https://greasyfork.org/en/scripts/538272-enhanced-google-drive-pdf-downloader)
 
 ## 🚀 How to Use
 
@@ -53,8 +49,8 @@ A powerful userscript that enables downloading view-only PDFs from Google Drive 
 ## ⚠️ Important Notes
 - **Document Loading**: Scroll through the entire document before downloading to ensure all pages are loaded
 - **Processing Time**: High Quality mode may take longer, especially for large documents
-- **Browser Compatibility**: Tested on Chrome and Firefox with latest versions
-- **Page Limits**: Performance may vary with very large documents (100+ pages)
+- **Browser Compatibility**: Tested on Firefox 159.0
+- **UserScript Manager**: Only tested on Violentmonkey
 
 ## 🔧 Troubleshooting
 
@@ -62,7 +58,7 @@ Common issues and solutions:
 
 | Issue | Solution |
 |-------|----------|
-| Can not see Download button | Make sure to use Firefox. Chrome gives errors |
+| Can not see Download button | Make sure to use the latest version of Firefox, Violentmonkey and this script |
 | Missing pages | Scroll through entire document first |
 | Slow processing | Switch to Fast mode for quicker results |
 | Download fails | Refresh page and try again |
@@ -70,7 +66,12 @@ Common issues and solutions:
 
 ## 🆕 Version History
 
-### v2(Current)
+### v2.1 (Current)
+- Replace dynamic jspdf loading with `@require` and use `@grant unsafeWindow` so that jspdf can be successfully loaded
+- Define `@inject-into content` to fix script not injecting at all in Violentmonkey
+- Narrow `@match` scope to `https://drive.google.com/file/*` URLs only to prevent unnecessary injection in normal Drive pages. This fixes preview-related instability
+
+### v2
 - Added quality mode toggle
 - Improved progress indicators
 - Enhanced error handling
@@ -83,18 +84,12 @@ Common issues and solutions:
 ## 📄 License
 MIT License - feel free to modify and distribute
 
-## Known Issues
-
-### Critical Browser Compatibility Issue
-- **Firefox**: ✅ Fully functional
-- **Chrome**: ❌ Currently experiencing Trusted Types policy errors
-
 ## 🤝 Contributing
-Contributions are welcome! Please feel free to submit a [Pull Request](https://github.com/Akv2021/Enhanced-Google-Drive-PDF-Downloader/pulls)
+Contributions are welcome! Please feel free to submit a [Pull Request](https://github.com/JSGRD22/Enhanced-Google-Drive-PDF-Downloader/pulls)
 
 ## 🙏 Credits
 - Uses [jsPDF](https://github.com/MrRio/jsPDF) library
 
 ---
 
-For issues and feature requests, please [create an issue](https://github.com/Akv2021/Enhanced-Google-Drive-PDF-Downloader/issues)
+For issues and feature requests, please [create an issue](https://github.com/JSGRD22/Enhanced-Google-Drive-PDF-Downloader/issues)
